@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria de Logros 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS para diseño responsive -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Íconos de Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Fuente Poppins -->
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Poppins', sans-serif; /* Fuente moderna y limpia */
+            background-color: #f0f9ff; /* Azul claro suave como fondo */
+            color: #333; /* Texto oscuro para contraste */
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #4CAF50; /* Verde suave para colores vivos */
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem; /* Tamaño llamativo */
+            color: #fff; /* Blanco para contraste */
+            font-weight: 600;
+            letter-spacing: 1px; /* Estilo moderno */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil */
+        }
+
+        /* Estilos para el botón en main */
+        .form-button {
+            background-color: #ADD8E6; /* Azul claro */
+            color: #4CAF50; /* Verde para acento */
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 1rem auto; /* Centrado y con margen */
+            display: block; /* Para que sea responsive */
+        }
+        .form-button:hover {
+            background-color: #4CAF50; /* Cambio a verde al hover */
+            color: #fff;
+            transform: translateY(-2px); /* Efecto de elevación */
+        }
+
+        /* Estilos para la marquesina */
+        .marquee-container {
+            height: 400px; /* Altura fija para imágenes grandes */
+            overflow: hidden;
+            position: relative;
+            background-color: #228B22; /* Verde no claro (verde bosque oscuro) */
+        }
+        
+        .marquee-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .marquee-slide.active {
+            opacity: 1;
+        }
+        
+        .marquee-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Imágenes grandes que cubren el área */
+        }
+        
+        .marquee-dot {
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            border: 2px solid #228B22; /* Borde con el color verde oscuro */
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .marquee-dot.active {
+            background-color: #228B22; /* Verde oscuro para el punto activo */
+        }
+
+        /* Estilos para las tarjetas */
+        .card {
+            background-color: #fff; /* Fondo blanco */
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 1.5rem;
+            margin: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para hover */
+            opacity: 0; /* Para el efecto de entrada */
+            transform: translateY(20px); /* Posición inicial para animación */
+            animation: fadeIn 0.6s ease forwards; /* Animación de entrada */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Elevación al hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+            background-color: #e6f7ff; /* Cambio a azul claro suave */
+        }
+        .card h2 {
+            color: #4CAF50; /* Verde para títulos */
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #555; /* Texto gris suave */
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+        .card i {
+            font-size: 1.5rem; /* Tamaño de ícono */
+            color: #ADD8E6; /* Azul claro para íconos */
+            margin-bottom: 0.75rem;
+        }
+
+        /* Animación de entrada para tarjetas */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Grid responsive para tarjetas */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste automático para móviles */
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #228B22; /* Verde no claro para el footer */
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="flex justify-center items-center flex-col md:flex-row">
+        <h1 class="text-center md:text-left">Feria de Logros 2025</h1>
+        <!-- Botón removido de aquí -->
+    </header>
+
+    <!-- Marquesina de imágenes -->
+    <div class="marquee-container">
+        <div class="marquee-slide active">
+            <img src="INSTITUTO NACIONAL DE COMERCIO.png" alt="Imagen 1 de la feria">
+        </div>
+         <div class="marquee-slide active">
+            <img src="https://static.vecteezy.com/system/resources/previews/007/577/926/non_2x/banner-flat-design-elements-for-sustainable-energy-development-environmental-and-ecology-concept-vector.jpg" alt="Imagen 1 de la feria">
+        </div>
+     <div class="marquee-slide active">
+            <img src="INSTITUTO NACIONAL DE COMERCIO.png" alt="Imagen 1 de la feria">
+        </div>
+         <div class="marquee-slide active">
+            <img src="https://static.vecteezy.com/system/resources/previews/007/577/926/non_2x/banner-flat-design-elements-for-sustainable-energy-development-environmental-and-ecology-concept-vector.jpg" alt="Imagen 1 de la feria">
+        </div>
+        
+        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+            <span class="marquee-dot active" onclick="currentSlide(0)"></span>
+            <span class="marquee-dot" onclick="currentSlide(1)"></span>
+            <span class="marquee-dot" onclick="currentSlide(2)"></span>
+            <span class="marquee-dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- Cuerpo principal con tarjetas y botón al principio -->
+    <main>
+        <!-- Botón agregado aquí, al principio de main -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftlNTFCsG1aV4FBclPIbfdBDPNn_UjduovNRcR0y51gYvW4A/viewform?usp=dialog">
+            <button class="form-button">Ir al formulario</button>
+        </a>
+        
+      <div class="cards-grid">
+    <!-- Tarjeta 1: Bioplástico -->
+    <a href="bioplastico.html" class="card">
+        <i class="fas fa-leaf"></i>
+        <h2>Bioplástico</h2>
+        <p>Material ecológico derivado de fuentes renovables, reduciendo el impacto ambiental de los plásticos tradicionales.</p>
+    </a>
+
+    <!-- Tarjeta 2: Química Orgánica -->
+    <a href="quimica organica.html" class="card" style="animation-delay: 0.2s;">
+        <i class="fas fa-flask"></i>
+        <h2>Química Orgánica</h2>
+        <p>Estudio de compuestos basados en carbono, fundamentales para la vida y la industria química.</p>
+    </a>
+
+    <!-- Tarjeta 3: Compuestos Orgánicos -->
+    <a href="compuesto organico.html" class="card" style="animation-delay: 0.4s;">
+        <i class="fas fa-atom"></i>
+        <h2>Compuestos Orgánicos</h2>
+        <p>Moléculas esenciales en la química, utilizadas en medicamentos, plásticos y combustibles.</p>
+    </a>
+
+    <!-- Tarjeta 4: Experimento -->
+    <a href="experimento.html" class="card" style="animation-delay: 0.6s;">
+        <i class="fas fa-vial"></i>
+        <h2>Experimento</h2>
+        <p>Pruebas prácticas para demostrar reacciones químicas y su aplicación en la vida diaria.</p>
+    </a>
+
+    <!-- Tarjeta 5: Impacto Ambiental -->
+    <a href="impacto ambiental.html" class="card" style="animation-delay: 0.8s;">
+        <i class="fas fa-globe"></i>
+        <h2>Impacto Ambiental</h2>
+        <p>Análisis de cómo los compuestos orgánicos afectan el medio ambiente y propuestas para soluciones sostenibles.</p>
+    </a>
+
+    <!-- Tarjeta 6: Usos y Vida Cotidiana -->
+    <a href="vida cotidiana.html" class="card" style="animation-delay: 1.0s;">
+        <i class="fas fa-home"></i>
+        <h2>Usos y Vida Cotidiana</h2>
+        <p>Aplicaciones de la química orgánica en productos cotidianos como alimentos, ropa y cosméticos.</p>
+    </a>
+</div>
+
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        INSTITUTO NACIONAL DE COMERCIO- CUNA DE CAMPEONES - CIENCIA Y TECNOLOGIA - PROF. MARCO LUIZ PEREZ VELASCO
+    </footer>
+
+    <script>
+        // JavaScript para la marquesina
+        let currentSlideIndex = 0;
+        
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.marquee-slide');
+            const dots = document.querySelectorAll('.marquee-dot');
+            
+            if (index >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (index < 0) {
+                currentSlideIndex = slides.length - 1;
+            } else {
+                currentSlideIndex = index;
+            }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
+        }
+        
+        function currentSlide(index) {
+            showSlide(index);
+        }
+        
+        function autoSlide() {
+            showSlide(currentSlideIndex + 1);
+        }
+        
+        // Configurar intervalo para el carrusel
+        let slideInterval = setInterval(autoSlide, 5000);  // Cambia cada 5 segundos
+        
+        // JavaScript simple para asegurar que las animaciones se inicien después de cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(0);  // Iniciar la marquesina en la primera slide
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';  // Asegura el fade-in
+                }, index * 200);  // Retardo por tarjeta para efecto secuencial
+            });
+        });
+    </script>
+</body>
+</html>
